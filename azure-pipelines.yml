@@ -23,6 +23,9 @@ steps:
       projects: '**/**/*.csproj'
   
   - task: AzureCLI@1
-    displayName: delete exising jar file
     inputs:
-      azureSubscription: 
+      azureSubscription: 'azure devops'
+      scriptLocation: 'inlineScript'
+      inlineScript: 'az storage blob delete-batch --account-name sriramtoday --source srirasm'
+  
+  

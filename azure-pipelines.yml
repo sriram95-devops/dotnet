@@ -26,6 +26,6 @@ steps:
     inputs:
       azureSubscription: 'azure to devops'
       scriptLocation: 'inlineScript'
-      inlineScript: 'az storage blob delete-batch --account-name sriramtoday --source srirasm'
+      inlineScript: 'az storage blob delete-batch --account-name sriramtoday --source srirasm --auth-mode login'
   
   

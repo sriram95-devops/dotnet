@@ -21,3 +21,8 @@ steps:
     inputs:
       command: 'build'
       projects: '**/**/*.csproj'
+  
+  - task: AzureCLI@1
+    displayName: delete exising jar file
+    inputs:
+      azureSubscription: 

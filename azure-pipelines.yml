@@ -24,7 +24,7 @@ steps:
   
   - task: AzureCLI@1
     inputs:
-      azureSubscription: 'azure devops'
+      azureSubscription: 'azure to devops'
       scriptLocation: 'inlineScript'
       inlineScript: 'az storage blob delete-batch --account-name sriramtoday --source srirasm'
   

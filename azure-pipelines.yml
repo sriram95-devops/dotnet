@@ -28,11 +28,13 @@ steps:
       scriptLocation: 'inlineScript'
       inlineScript: 'az storage blob delete-batch --account-name sriramtoday --source srirasm --pattern *.txt'
   
-  - task: AzureFileCopy@5
+
+  - task: AzureCLI@1
     inputs:
-      SourcePath: '**/**/*.dll'
       azureSubscription: 'azure to devops'
-      Destination: 'AzureBlob'
-      storage: 'sriramtoday'
-      ContainerName: 'srirasm'
-    
+      scriptLocation: 'inlineScript'
+      inlineScript: |
+        az storage blob upload-batch
+                  --destination srirasm
+                  --account-name "sriramtoday" 
+                  --source "$(Agent.BuildDirectory)/$(outputDir)"

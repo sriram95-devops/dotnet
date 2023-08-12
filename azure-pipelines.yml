@@ -28,4 +28,12 @@ steps:
       scriptLocation: 'inlineScript'
       inlineScript: 'az storage blob delete-batch --account-name sriramtoday --source srirasm --pattern *.txt'
   
-  
+  - task: AzureFileCopy@3
+    inputs:
+      SourcePath: '/**/**/bcreadgen.dll'
+      azureSubscription: 'azure to devops'
+      Destination: 'AzureBlob'
+      storage: 'sriramtoday'
+      ContainerName: 'srirasm'
+      CleanTargetBeforeCopy: true
+      

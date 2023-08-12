@@ -33,8 +33,4 @@ steps:
     inputs:
       azureSubscription: 'azure to devops'
       scriptLocation: 'inlineScript'
-      inlineScript: |
-        az storage blob upload-batch
-                  --destination srirasm
-                  --account-name "sriramtoday" 
-                  --source "$(Agent.BuildDirectory)/$(outputDir)"
+      inlineScript: 'az storage blob upload-batch -d srirasm --account-namesriramtoday  -s "$(Agent.BuildDirectory)/$(outputDir)"''

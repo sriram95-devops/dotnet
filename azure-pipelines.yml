@@ -31,7 +31,7 @@ steps:
 
   - task: AzureFileCopy@2
     inputs:
-      SourcePath: '**/**/*.dll'
+      SourcePath: '**/**/**.csproj'
       azureSubscription: 'azure to devops'
       Destination: 'AzureBlob'
       storage: 'sriramtoday'
